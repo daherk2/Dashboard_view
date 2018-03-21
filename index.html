@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboards</title>
+  <link rel="stylesheet" href="./static/lib/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./static/lib/css/keen-dashboards.css">
+  <link rel="stylesheet" type="text/css" href="./static/css/dc.css"/>
+</head>
+<body class="application">
+
+
+
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="./">
+          <object id="front-page-logo" class="responsive-img" width="160px" type="image/svg+xml" data="https://mahisoftware.com/img/logo.svg">Your browser does not support SVG.</object>
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active">
+            <a href="#">Dashboard</a>
+          </li>
+          <li>
+            <a href="#">Configuração</a>
+          </li>
+          <li>
+            <a href="#">Sair</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+ <div class="container">
+ <div class="row">
+ <div class="col-md-12">
+ </div>
+</div>
+<div class="row">
+ <div class="col-md-offset-3 col-md-6">
+ <form role="form" autocomplete="off">
+ <div class="form-group">
+ <div class="input-group">
+ 
+ <div class="autocomplete">
+    <script type="text/javascript" src="autoc.js"></script>
+    <input id="myInput" type="text" name="myCountry" class="form-control" placeholder="Entre com a cidade que deseja pesquisar">
+      <script type="text/javascript">
+        autocomplete(document.getElementById("myInput"), countries);
+      </script>
+  
+
+ </div>
+
+ <span class="input-group-btn">
+ <a class="btn btn-info" type="submit">
+Ir</a>
+ </span>
+ </div>
+</div>
+</form>
+
+
+ </div>
+</div>
+</div>
+</div>
+
+  <script type="text/javascript" src="./static/js/d3.js" charset="utf-8"></script>
+  <script type="text/javascript" src="./static/js/crossfilter.js"></script>
+  <script type="text/javascript" src="./static/js/dc.js"></script>
+  <script type="text/javascript" src="charts.js"></script>
+
+  <div class="container-fluid">
+
+    <div class="row">
+
+      <div class="col-sm-6">
+        <div class="row">
+
+          <div class="col-sm-12">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                Dashboard Exemplo
+              </div>
+              <div class="chart-stage">
+              <!--img data-src="holder.js/100%x120/white/text:100x120"-->
+              <!-- -->
+                  <div id="test"></div>
+                  <script type="text/javascript">
+                      Bar_plot();
+                  </script>
+              <!-- -->
+              </div>
+              <!--div class="chart-notes">
+                Elementos de teste
+              </div-->
+            </div>
+          </div>
+
+
+          <div class="col-sm-6">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                Cell Title
+              </div>
+              <div class="chart-stage">
+                <!--img data-src="holder.js/100%x265/white/text:100x265"-->
+                <div id="test_2"></div>
+                  <script type="text/javascript">
+                      Pie_plot();
+                  </script>
+              </div>
+              <!--div class="chart-notes">
+                Notes about this chart
+              </div-->
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                Cell Title
+              </div>
+              <div class="chart-stage">
+                <!--img data-src="holder.js/100%x265/white/text:100x265"-->
+                <div id="test_3"></div>
+                  <script type="text/javascript">
+                      Area_plot();
+                  </script>
+              </div>
+              <!--div class="chart-notes">
+                Notes about this chart
+              </div-->
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Cell Title
+          </div>
+          <div class="chart-stage">
+            <!--img data-src="holder.js/100%x324/white/text:100x324"-->
+            <div id="test_1"></div>
+                  <script type="text/javascript">
+                      Line_plot();
+                  </script>
+          </div>
+          <!--div class="chart-notes">
+            Notes about this chart
+          </div-->
+        </div>
+      </div>
+
+
+      <div class="col-sm-3">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Cell Title
+          </div>
+          <div class="chart-stage">
+            <!--img data-src="holder.js/100%x60/white/text:100x60"-->
+            <div id="test_4"></div>
+                  <script type="text/javascript">
+                      Heat_plot();
+                  </script>
+          </div>
+          <!--div class="chart-notes">
+            Notes about this chart
+          </div-->
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Cell Title
+          </div>
+          <div class="chart-stage">
+            <!--img data-src="holder.js/100%x60/white/text:100x60"-->
+             <div id="bartest"></div>
+             <div id="linetest"></div>
+                  <script type="text/javascript">
+                      Spark_plot();
+                  </script>
+          </div>
+          <!--div class="chart-notes">
+            Notes about this chart
+          </div-->
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  </div>
+
+  <script src="./static/lib/js/jquery.min.js"></script>
+  <script src="./static/lib/js/bootstrap.min.js"></script>
+  <script src="./static/lib/js/holder.js"></script>
+
+  <script>
+    Holder.add_theme("white", { background:"#fff", foreground:"#a7a7a7", size:10 });
+  </script>
+
+  <script src="./static/lib/js/keen.min.js"></script>
+  <script src="./static/lib/js/meta.js"></script>
+
+</body>
+</html>
